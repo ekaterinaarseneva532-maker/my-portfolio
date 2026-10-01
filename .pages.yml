@@ -1,0 +1,63 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: works
+    label: Мои работы
+    type: collection
+    path: _works
+    filename: "{fields.title}"
+    fields:
+      - name: title
+        label: Название работы
+        type: string
+        required: true
+      - name: date
+        label: Дата
+        type: date
+      - name: category
+        label: Категория
+        type: string
+      - name: size
+        label: Размер
+        type: string
+      - name: materials
+        label: Материалы
+        type: string
+      - name: technique
+        label: Техника
+        type: string
+      - name: image
+        label: Фотография
+        type: image
+      - name: body
+        label: Описание работы
+        type: rich-text
+
+  - name: settings
+    label: Настройки и контакты
+    type: file
+    path: _data/settings.yml
+    fields:
+      - name: name
+        label: Ваше имя / Название
+        type: string
+      - name: tagline
+        label: Подзаголовок
+        type: string
+      - name: about
+        label: О себе / О мастере
+        type: rich-text
+      - name: phone
+        label: Телефон
+        type: string
+      - name: email
+        label: E-mail
+        type: string
+      - name: telegram
+        label: Ссылка на Telegram
+        type: string
+      - name: vk
+        label: Ссылка на VK
+        type: string
