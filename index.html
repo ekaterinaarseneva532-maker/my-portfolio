@@ -1,6 +1,3 @@
----
-layout: null
----
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -101,11 +98,6 @@ layout: null
       display: block;
     }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; max-width: 1050px; margin: 0 auto 50px auto; }
-    .card { background: #14110d; border: 1px solid rgba(212, 175, 55, 0.2); padding: 15px; transition: all 0.3s ease; }
-    .card:hover { border-color: #c59b27; transform: translateY(-4px); }
-    .card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #f3ece0; margin-top: 12px; font-style: italic; }
-
     .contacts-box { max-width: 1050px; margin: 0 auto 50px auto; text-align: center; padding: 40px 20px; background: #14110d; border: 1px solid rgba(212, 175, 55, 0.25); }
     .contacts-links { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 25px; }
 
@@ -116,7 +108,7 @@ layout: null
 <body>
 
   <header class="site-header">
-    <a class="site-title" href="{{ site.baseurl }}/">ИКОНЫ</a>
+    <a class="site-title" href="/my-portfolio/">ИКОНЫ</a>
     <a class="header-btn" href="#contacts">Связаться</a>
   </header>
 
@@ -126,7 +118,7 @@ layout: null
     <p class="lead">Коллекция декоративно оформленных икон для дома, в подарок и для особого события. Каждая работа — отдельный художественный объект, создаваемый в единственном экземпляре.</p>
     <div class="buttons">
       <a class="btn-gold" href="#featured">Главная работа</a>
-      <a class="btn-outline" href="#works">Каталог работ</a>
+      <a class="btn-outline" href="#contacts">Индивидуальный заказ</a>
     </div>
   </section>
 
@@ -135,7 +127,7 @@ layout: null
     <h2 class="section-title">Избранная работа</h2>
     <div class="featured-work">
       <div class="featured-image-container">
-        <img src="{{ site.baseurl }}/assets/uploads/ikona.jpg" alt="Икона Божией Матери">
+        <img src="/my-portfolio/assets/uploads/ikona.jpg" alt="Икона Божией Матери">
       </div>
       <div>
         <span class="eyebrow">ОСОБЫЙ ЭКЗЕМПЛЯР</span>
@@ -150,37 +142,11 @@ layout: null
     </div>
   </section>
 
-  <!-- Каталог всех работ -->
-  <section id="works">
-    <h2 class="section-title">Каталог произведений</h2>
-    <div class="grid">
-      {% assign works = site.works | sort: "date" | reverse %}
-      {% for work in works %}
-        <article class="card">
-          <a href="{{ work.url | relative_url }}" style="text-decoration: none;">
-            {% if work.image %}
-              <img src="{{ work.image | relative_url }}" alt="{{ work.title }}" style="width:100%; height:240px; object-fit:cover; border: 1px solid rgba(212,175,55,0.2);">
-            {% endif %}
-            <h3>{{ work.title }}</h3>
-            {% if work.category %}<p style="color: #a89f91; font-size: 0.85rem; margin-top: 5px;">{{ work.category }}</p>{% endif %}
-          </a>
-        </article>
-      {% empty %}
-        <p style="text-align: center; grid-column: 1/-1; color: #888; padding: 20px;">Добавьте работы через Панель управления, и они появятся в каталоге.</p>
-      {% endfor %}
-    </div>
-  </section>
-
   <!-- Контакты -->
   <section id="contacts" class="contacts-box">
     <span class="eyebrow">СВЯЗЬ И ЗАКАЗ</span>
     <h2 class="section-title" style="margin-bottom: 10px;">Екатерина Валериевна</h2>
-    <p style="color: #b3a99b; font-size: 0.95rem;">По вопросам приобретения готовых работ или индивидуального заказа свяжитесь со мной:</p>
-    <div class="contacts-links">
-      {% if site.data.settings.phone %}<a class="header-btn" href="tel:{{ site.data.settings.phone }}">Телефон</a>{% endif %}
-      {% if site.data.settings.telegram %}<a class="header-btn" href="{{ site.data.settings.telegram }}" target="_blank">Telegram</a>{% endif %}
-      {% if site.data.settings.vk %}<a class="header-btn" href="{{ site.data.settings.vk }}" target="_blank">VK</a>{% endif %}
-    </div>
+    <p style="color: #b3a99b; font-size: 0.95rem;">По вопросам приобретения готовых работ или индивидуального заказа свяжитесь со мной.</p>
   </section>
 
   <footer class="site-footer">
