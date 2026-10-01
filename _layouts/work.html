@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="work">
+  <a class="back" href="{{ '/works/' | relative_url }}">← Все работы</a>
+  <h1>{{ page.title }}</h1>
+  {% if page.image %}<img class="work-main-image" src="{{ page.image | relative_url }}" alt="{{ page.title }}">{% endif %}
+  <div class="details">
+    {% if page.category %}<div><b>Категория:</b> {{ page.category }}</div>{% endif %}
+    {% if page.size %}<div><b>Размер:</b> {{ page.size }}</div>{% endif %}
+    {% if page.materials %}<div><b>Материалы:</b> {{ page.materials }}</div>{% endif %}
+    {% if page.technique %}<div><b>Техника:</b> {{ page.technique }}</div>{% endif %}
+  </div>
+  <div class="content">{{ content }}</div>
+</article>
