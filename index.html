@@ -47,9 +47,9 @@
     .buttons { display: flex; flex-direction: column; gap: 15px; }
     @media (min-width: 600px) { .buttons { flex-direction: row; } }
 
-    .btn-gold { background: linear-gradient(135deg, #e6c875, #c59b27); color: #0b0a08; padding: 14px 28px; font-weight: 600; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: transform 0.2s ease; }
+    .btn-gold { background: linear-gradient(135deg, #e6c875, #c59b27); color: #0b0a08; padding: 14px 28px; font-weight: 600; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: transform 0.2s ease; display: inline-block; }
     .btn-gold:hover { transform: translateY(-2px); }
-    .btn-outline { border: 1px solid #c59b27; color: #e6c875; padding: 14px 28px; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s ease; }
+    .btn-outline { border: 1px solid #c59b27; color: #e6c875; padding: 14px 28px; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s ease; display: inline-block; }
     .btn-outline:hover { background: rgba(197, 155, 39, 0.1); }
 
     .section-title { 
@@ -129,8 +129,8 @@
     <h2 class="section-title">Избранная работа</h2>
     <div class="featured-work">
       <div class="featured-image-container">
-        <!-- Указываем точно ваш загруженный файл из папки assets -->
-        <img src="assets/Ikona_spasitel_premium_cover.jpg" alt="Икона Спаситель">
+        <!-- Встроенный в код файл иконы -->
+        <img src="assets/Ikona_spasitel_premium_cover.jpg" onerror="this.onerror=null; this.src='./assets/Ikona_spasitel_premium_cover.jpg';" alt="Икона Спаситель">
       </div>
       <div>
         <span class="eyebrow">РУЧНАЯ РАБОТА · ДЕКОРАТИВНЫЙ ОКЛАД</span>
@@ -138,7 +138,7 @@
           Икона «Спаситель»
         </h3>
         <p style="color: #c4bcaf; font-size: 0.95rem; margin-bottom: 20px;">
-          Авторская работа с изысканным резным окладом и детальным декоративным оформлением. Единственный экземпляр.
+          Авторская работа с изысканным резным окладом и детальным декоративным оформлением[span_4](start_span)[span_4](end_span). Единственный экземпляр[span_5](start_span)[span_5](end_span).
         </p>
         <a class="btn-gold" href="#contacts">Заказать / Связаться</a>
       </div>
