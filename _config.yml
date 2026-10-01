@@ -1,7 +1,7 @@
 title: "ИКОНЫ"
 description: "Авторские работы · единичные экземпляры. Иконы и киоты, созданные вручную."
 url: "https://ekaterinaarseneva532-maker.github.io"
-baseurl: "/ekaterinaarseneva532-maker-.github.io"
+baseurl: "/my-portfolio"
 lang: "ru"
 markdown: kramdown
 permalink: /works/:title/
