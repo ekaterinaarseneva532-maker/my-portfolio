@@ -6,37 +6,110 @@ layout: null
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ИКОНЫ — Авторские работы</title>
+  <title>ИКОНЫ — Авторские работы Екатерины Арсеньевой</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background-color: #0b0a08; color: #e8e3d9; font-family: 'Montserrat', sans-serif; line-height: 1.6; padding: 15px; }
     
-    .site-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.25); max-width: 1000px; margin: 0 auto 20px auto; }
-    .site-title { color: #f3ece0; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; font-weight: 700; }
-    .header-btn { border: 1px solid #c59b27; color: #e6c875; padding: 6px 14px; text-decoration: none; border-radius: 2px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+    .site-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.25); max-width: 1050px; margin: 0 auto 25px auto; }
+    .site-title { color: #f3ece0; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; font-weight: 700; }
+    .header-btn { border: 1px solid #c59b27; color: #e6c875; padding: 8px 18px; text-decoration: none; border-radius: 2px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
+    .header-btn:hover { background: #c59b27; color: #0b0a08; }
 
-    .hero { max-width: 1000px; margin: 0 auto 40px auto; padding: 35px 20px; background: linear-gradient(rgba(11, 10, 8, 0.85), rgba(11, 10, 8, 0.95)), url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; border: 1px solid rgba(212, 175, 55, 0.3); }
-    .eyebrow { color: #a89f91; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: block; }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.15; color: #f3ece0; margin-bottom: 18px; font-weight: 600; }
-    .hero p.lead { color: #b3a99b; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.5; }
+    .hero { max-width: 1050px; margin: 0 auto 50px auto; padding: 45px 25px; background: linear-gradient(135deg, rgba(20, 17, 13, 0.95), rgba(11, 10, 8, 0.98)); border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .eyebrow { color: #c59b27; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; display: block; font-weight: 500; }
     
-    .buttons { display: flex; flex-direction: column; gap: 12px; }
-    .btn-gold { background: linear-gradient(135deg, #e6c875, #c59b27); color: #0b0a08; padding: 12px 20px; font-weight: 600; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-    .btn-outline { border: 1px solid #c59b27; color: #e6c875; padding: 12px 20px; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+    .hero h1 { 
+      font-family: 'Cormorant Garamond', serif; 
+      font-size: 2.8rem; 
+      line-height: 1.15; 
+      color: #f3ece0; 
+      margin-bottom: 22px; 
+      font-weight: 600;
+      font-style: italic;
+      position: relative;
+      padding-bottom: 15px;
+    }
 
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #e6c875; margin-bottom: 20px; text-align: center; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto 40px auto; }
-    .card { background: #14110d; border: 1px solid rgba(212, 175, 55, 0.2); padding: 12px; }
-    .card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: #f3ece0; margin-top: 10px; }
+    .hero h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, #e6c875, transparent);
+    }
 
-    .contacts-box { max-width: 1000px; margin: 0 auto 40px auto; text-align: center; padding: 30px 15px; background: #14110d; border: 1px solid rgba(212, 175, 55, 0.2); }
-    .contacts-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+    .hero p.lead { color: #c4bcaf; font-size: 1rem; margin-bottom: 30px; max-width: 700px; line-height: 1.7; font-weight: 300; }
+    
+    .buttons { display: flex; flex-direction: column; gap: 15px; }
+    @media (min-width: 600px) { .buttons { flex-direction: row; } }
 
-    .site-footer { text-align: center; padding: 30px 0; border-top: 1px solid rgba(212, 175, 55, 0.2); color: #7a7165; font-size: 0.8rem; max-width: 1000px; margin: 0 auto; }
+    .btn-gold { background: linear-gradient(135deg, #e6c875, #c59b27); color: #0b0a08; padding: 14px 28px; font-weight: 600; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: transform 0.2s ease; }
+    .btn-gold:hover { transform: translateY(-2px); }
+    .btn-outline { border: 1px solid #c59b27; color: #e6c875; padding: 14px 28px; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s ease; }
+    .btn-outline:hover { background: rgba(197, 155, 39, 0.1); }
+
+    .section-title { 
+      font-family: 'Cormorant Garamond', serif; 
+      font-size: 2.2rem; 
+      color: #e6c875; 
+      margin-bottom: 30px; 
+      text-align: center; 
+      font-weight: 600;
+      font-style: italic;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 1px;
+      background: #c59b27;
+    }
+
+    .featured-work {
+      max-width: 1050px;
+      margin: 0 auto 60px auto;
+      background: #14110d;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .featured-work { grid-template-columns: 1fr 1fr; padding: 35px; }
+    }
+    .featured-image-container img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      display: block;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; max-width: 1050px; margin: 0 auto 50px auto; }
+    .card { background: #14110d; border: 1px solid rgba(212, 175, 55, 0.2); padding: 15px; transition: all 0.3s ease; }
+    .card:hover { border-color: #c59b27; transform: translateY(-4px); }
+    .card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #f3ece0; margin-top: 12px; font-style: italic; }
+
+    .contacts-box { max-width: 1050px; margin: 0 auto 50px auto; text-align: center; padding: 40px 20px; background: #14110d; border: 1px solid rgba(212, 175, 55, 0.25); }
+    .contacts-links { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 25px; }
+
+    .site-footer { text-align: center; padding: 30px 0; border-top: 1px solid rgba(212, 175, 55, 0.2); color: #7a7165; font-size: 0.85rem; max-width: 1050px; margin: 0 auto; }
     .site-footer a { color: #c59b27; text-decoration: none; }
   </style>
 </head>
@@ -50,47 +123,74 @@ layout: null
   <section class="hero">
     <span class="eyebrow">АВТОРСКИЕ РАБОТЫ · ЕДИНИЧНЫЕ ЭКЗЕМПЛЯРЫ</span>
     <h1>Иконы и киоты, созданные вручную</h1>
-    <p class="lead">Коллекция декоративно оформленных икон для дома, в подарок и для особого события. Каждая работа — отдельный художественный объект.</p>
+    <p class="lead">Коллекция декоративно оформленных икон для дома, в подарок и для особого события. Каждая работа — отдельный художественный объект, создаваемый в единственном экземпляре.</p>
     <div class="buttons">
-      <a class="btn-gold" href="#works">Смотреть каталог</a>
-      <a class="btn-outline" href="#contacts">Индивидуальный заказ</a>
+      <a class="btn-gold" href="#featured">Главная работа</a>
+      <a class="btn-outline" href="#works">Каталог работ</a>
     </div>
   </section>
 
+  <!-- Избранное произведение -->
+  <section id="featured" style="max-width: 1050px; margin: 0 auto;">
+    <h2 class="section-title">Избранная работа</h2>
+    <div class="featured-work">
+      <div class="featured-image-container">
+        {% assign featured_work = site.works | first %}
+        {% if featured_work and featured_work.image %}
+          <img src="{{ featured_work.image | relative_url }}" alt="{{ featured_work.title }}">
+        {% else %}
+          <img src="{{ site.baseurl }}/assets/uploads/ikona.jpg" alt="Икона Божией Матери">
+        {% endif %}
+      </div>
+      <div>
+        <span class="eyebrow">ОСОБЫЙ ЭКЗЕМПЛЯР</span>
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #f3ece0; font-style: italic; margin-bottom: 15px;">
+          {% if featured_work %}{{ featured_work.title }}{% else %}Икона Божией Матери в резном окладе{% endif %}
+        </h3>
+        <p style="color: #c4bcaf; font-size: 0.95rem; margin-bottom: 20px;">
+          {% if featured_work and featured_work.content != "" %}{{ featured_work.content | strip_html | truncate: 180 }}{% else %}Авторская работа с богатым резным окладом и декоративным оформлением. Ручное шитьё и убранство.{% endif %}
+        </p>
+        <a class="btn-gold" href="#contacts">Заказать / Связаться</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Каталог всех работ -->
   <section id="works">
-    <h2 class="section-title">Авторские работы</h2>
+    <h2 class="section-title">Каталог произведений</h2>
     <div class="grid">
       {% assign works = site.works | sort: "date" | reverse %}
       {% for work in works %}
         <article class="card">
           <a href="{{ work.url | relative_url }}" style="text-decoration: none;">
-            {% if work.image %}<img src="{{ work.image | relative_url }}" alt="{{ work.title }}" style="width:100%; height:200px; object-fit:cover;">{% endif %}
+            {% if work.image %}
+              <img src="{{ work.image | relative_url }}" alt="{{ work.title }}" style="width:100%; height:240px; object-fit:cover; border: 1px solid rgba(212,175,55,0.2);">
+            {% endif %}
             <h3>{{ work.title }}</h3>
-            {% if work.category %}<p style="color: #a89f91; font-size: 0.8rem;">{{ work.category }}</p>{% endif %}
+            {% if work.category %}<p style="color: #a89f91; font-size: 0.85rem; margin-top: 5px;">{{ work.category }}</p>{% endif %}
           </a>
         </article>
+      {% empty %}
+        <p style="text-align: center; grid-column: 1/-1; color: #888; padding: 20px;">Добавьте работы через Панель управления, и они появятся в каталоге.</p>
       {% endfor %}
     </div>
   </section>
 
+  <!-- Контакты -->
   <section id="contacts" class="contacts-box">
     <span class="eyebrow">СВЯЗЬ И ЗАКАЗ</span>
-    <h2 class="section-title" style="margin-bottom: 10px;">Екатерина Арсеньева</h2>
-    <p style="color: #b3a99b; font-size: 0.9rem;">По вопросам приобретения или заказа индивидуальной работы свяжитесь со мной:</p>
+    <h2 class="section-title" style="margin-bottom: 10px;">Екатерина Валериева</h2>
+    <p style="color: #b3a99b; font-size: 0.95rem;">По вопросам приобретения готовых работ или индивидуального заказа свяжитесь со мной:</p>
     <div class="contacts-links">
       {% if site.data.settings.phone %}<a class="header-btn" href="tel:{{ site.data.settings.phone }}">Телефон</a>{% endif %}
-      {% if site.data.settings.telegram %}<a class="header-btn" href="{{ site.data.settings.telegram }}">Telegram</a>{% endif %}
-      {% if site.data.settings.vk %}<a class="header-btn" href="{{ site.data.settings.vk }}">VK</a>{% endif %}
+      {% if site.data.settings.telegram %}<a class="header-btn" href="{{ site.data.settings.telegram }}" target="_blank">Telegram</a>{% endif %}
+      {% if site.data.settings.vk %}<a class="header-btn" href="{{ site.data.settings.vk }}" target="_blank">VK</a>{% endif %}
     </div>
   </section>
 
   <footer class="site-footer">
     <p>© ИКОНЫ | <a href="{{ site.baseurl }}/admin/">Панель управления</a></p>
-  
-  <footer class="site-footer">
-    <p>© ИКОНЫ | <a href="{{ '/admin/' | relative_url }}">Панель управления</a></p>
   </footer>
-</footer>
 
 </body>
 </html>
