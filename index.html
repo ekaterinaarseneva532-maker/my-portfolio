@@ -47,7 +47,7 @@
     .buttons { display: flex; flex-direction: column; gap: 15px; }
     @media (min-width: 600px) { .buttons { flex-direction: row; } }
 
-    .btn-gold { background: linear-gradient(135deg, #e6c875, #c59b27); color: #0b0a08; padding: 14px 28px; font-weight: 600; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: transform 0.2s ease; display: inline-block; }
+    .btn-gold { background: linear-gradient(135deg, #e6c875, #c59b27); color: #0b0a08; padding: 14px 28px; font-weight: 600; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: transform 0.2s ease; display: inline-block; cursor: pointer; border: none; }
     .btn-gold:hover { transform: translateY(-2px); }
     .btn-outline { border: 1px solid #c59b27; color: #e6c875; padding: 14px 28px; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s ease; display: inline-block; }
     .btn-outline:hover { background: rgba(197, 155, 39, 0.1); }
@@ -98,10 +98,76 @@
       display: block;
     }
 
+    .price-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: #e6c875;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
     .contacts-box { max-width: 1050px; margin: 0 auto 50px auto; text-align: center; padding: 40px 20px; background: #14110d; border: 1px solid rgba(212, 175, 55, 0.25); }
     .social-grid { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 25px; }
     .social-btn { border: 1px solid #c59b27; color: #e6c875; padding: 10px 20px; text-decoration: none; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
     .social-btn:hover { background: #c59b27; color: #0b0a08; }
+
+    /* Стили для всплывающего окна (модалки) заявки */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 15px;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-content {
+      background: #14110d;
+      border: 1px solid #c59b27;
+      padding: 30px 20px;
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px; right: 15px;
+      background: none; border: none;
+      color: #e6c875; font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .modal-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .modal-btn {
+      display: block;
+      padding: 12px;
+      border: 1px solid #c59b27;
+      color: #f3ece0;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      background: #1b1712;
+      transition: all 0.2s ease;
+    }
+    .modal-btn:hover {
+      background: #c59b27;
+      color: #0b0a08;
+    }
 
     .site-footer { text-align: center; padding: 30px 0; border-top: 1px solid rgba(212, 175, 55, 0.2); color: #7a7165; font-size: 0.85rem; max-width: 1050px; margin: 0 auto; }
     .site-footer a { color: #c59b27; text-decoration: none; }
@@ -111,7 +177,7 @@
 
   <header class="site-header">
     <a class="site-title" href="/my-portfolio/">ИКОНЫ</a>
-    <a class="header-btn" href="#contacts">Связаться</a>
+    <a class="header-btn" onclick="openModal(event)" href="#contacts">Связаться</a>
   </header>
 
   <section class="hero">
@@ -120,11 +186,11 @@
     <p class="lead">Коллекция декоративно оформленных икон для дома, в подарок и для особого события. Каждая работа — отдельный художественный объект, создаваемый в единственном экземпляре.</p>
     <div class="buttons">
       <a class="btn-gold" href="#featured">Главная работа</a>
-      <a class="btn-outline" href="#contacts">Индивидуальный заказ</a>
+      <a class="btn-outline" onclick="openModal(event)" href="#contacts">Индивидуальный заказ</a>
     </div>
   </section>
 
-  <!-- Избранное произведение с гарантированной встроенной картинкой -->
+  <!-- Избранное произведение с ценой -->
   <section id="featured" style="max-width: 1050px; margin: 0 auto;">
     <h2 class="section-title">Избранная работа</h2>
     <div class="featured-work">
@@ -133,13 +199,14 @@
       </div>
       <div>
         <span class="eyebrow">РУЧНАЯ РАБОТА · ДЕКОРАТИВНЫЙ ОКЛАД</span>
-        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #f3ece0; font-style: italic; margin-bottom: 15px;">
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #f3ece0; font-style: italic; margin-bottom: 10px;">
           Икона «Спаситель»
         </h3>
+        <div class="price-tag">6 500 ₽</div>
         <p style="color: #c4bcaf; font-size: 0.95rem; margin-bottom: 20px;">
-          Авторская работа с изысканным ажурным резным окладом и детальным декоративным оформлением в киоте. Единственный экземпляр.
+          Авторская работа с изысканным ажурным резным окладом и детальным декоративным оформлением в киоте (36×32 см). Единственный экземпляр.
         </p>
-        <a class="btn-gold" href="#contacts">Заказать / Связаться</a>
+        <button class="btn-gold" onclick="openModal(event)">Заказать / Связаться</button>
       </div>
     </div>
   </section>
@@ -159,10 +226,42 @@
     </div>
   </section>
 
+  <!-- Всплывающее окно выбора связи (Заявка) -->
+  <div id="orderModal" class="modal-overlay" onclick="closeModalOutside(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <span class="eyebrow" style="margin-bottom: 5px;">ОФОРМЛЕНИЕ ЗАКАЗА</span>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #f3ece0; font-style: italic; margin-bottom: 15px;">
+        Выберите способ связи
+      </h3>
+      <p style="color: #b3a99b; font-size: 0.85rem; margin-bottom: 20px;">Нажмите на удобный мессенджер или позвоните напрямую:</p>
+      
+      <div class="modal-buttons">
+        <a class="modal-btn" href="https://wa.me/79000000000" target="_blank">💬 Написать в WhatsApp</a>
+        <a class="modal-btn" href="https://t.me/username" target="_blank">✈️ Написать в Telegram</a>
+        <a class="modal-btn" href="tel:+79000000000">📞 Позвонить (Прямой номер)</a>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <p>© ИКОНЫ | <a href="https://app.pagescms.org/">Панель управления</a></p>
   </footer>
 
+  <script>
+    function openModal(e) {
+      e.preventDefault();
+      document.getElementById('orderModal').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('orderModal').classList.remove('active');
+    }
+    function closeModalOutside(e) {
+      if (e.target.id === 'orderModal') {
+        closeModal();
+      }
+    }
+  </script>
+
 </body>
 </html>
-
