@@ -6,7 +6,7 @@ layout: null
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ИКОНЫ — Авторские работы Екатерины Арсеньевой</title>
+  <title>ИКОНЫ — Авторские работы Екатерины Валериевны</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -135,20 +135,15 @@ layout: null
     <h2 class="section-title">Избранная работа</h2>
     <div class="featured-work">
       <div class="featured-image-container">
-        {% assign featured_work = site.works | first %}
-        {% if featured_work and featured_work.image %}
-          <img src="{{ featured_work.image | relative_url }}" alt="{{ featured_work.title }}">
-        {% else %}
-          <img src="{{ site.baseurl }}/assets/uploads/ikona.jpg" alt="Икона Божией Матери">
-        {% endif %}
+        <img src="{{ site.baseurl }}/assets/uploads/ikona.jpg" alt="Икона Божией Матери">
       </div>
       <div>
         <span class="eyebrow">ОСОБЫЙ ЭКЗЕМПЛЯР</span>
         <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #f3ece0; font-style: italic; margin-bottom: 15px;">
-          {% if featured_work %}{{ featured_work.title }}{% else %}Икона Божией Матери в резном окладе{% endif %}
+          Икона Божией Матери в резном окладе
         </h3>
         <p style="color: #c4bcaf; font-size: 0.95rem; margin-bottom: 20px;">
-          {% if featured_work and featured_work.content != "" %}{{ featured_work.content | strip_html | truncate: 180 }}{% else %}Авторская работа с богатым резным окладом и декоративным оформлением. Ручное шитьё и убранство.{% endif %}
+          Авторская работа с богатым резным окладом и декоративным оформлением. Ручное шитьё и убранство.
         </p>
         <a class="btn-gold" href="#contacts">Заказать / Связаться</a>
       </div>
@@ -179,7 +174,7 @@ layout: null
   <!-- Контакты -->
   <section id="contacts" class="contacts-box">
     <span class="eyebrow">СВЯЗЬ И ЗАКАЗ</span>
-    <h2 class="section-title" style="margin-bottom: 10px;">Екатерина Валериева</h2>
+    <h2 class="section-title" style="margin-bottom: 10px;">Екатерина Валериевна</h2>
     <p style="color: #b3a99b; font-size: 0.95rem;">По вопросам приобретения готовых работ или индивидуального заказа свяжитесь со мной:</p>
     <div class="contacts-links">
       {% if site.data.settings.phone %}<a class="header-btn" href="tel:{{ site.data.settings.phone }}">Телефон</a>{% endif %}
@@ -189,7 +184,7 @@ layout: null
   </section>
 
   <footer class="site-footer">
-    <p>© ИКОНЫ | <a href="{{ site.baseurl }}/admin/">Панель управления</a></p>
+    <p>© ИКОНЫ | <a href="https://app.pagescms.org/">Панель управления</a></p>
   </footer>
 
 </body>
