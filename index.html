@@ -99,7 +99,9 @@
     }
 
     .contacts-box { max-width: 1050px; margin: 0 auto 50px auto; text-align: center; padding: 40px 20px; background: #14110d; border: 1px solid rgba(212, 175, 55, 0.25); }
-    .contacts-links { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 25px; }
+    .social-grid { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 25px; }
+    .social-btn { border: 1px solid #c59b27; color: #e6c875; padding: 10px 20px; text-decoration: none; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
+    .social-btn:hover { background: #c59b27; color: #0b0a08; }
 
     .site-footer { text-align: center; padding: 30px 0; border-top: 1px solid rgba(212, 175, 55, 0.2); color: #7a7165; font-size: 0.85rem; max-width: 1050px; margin: 0 auto; }
     .site-footer a { color: #c59b27; text-decoration: none; }
@@ -127,6 +129,7 @@
     <h2 class="section-title">Избранная работа</h2>
     <div class="featured-work">
       <div class="featured-image-container">
+        <!-- Показываем вашу загруженную икону -->
         <img src="/my-portfolio/assets/uploads/ikona.jpg" alt="Икона Божией Матери">
       </div>
       <div>
@@ -142,11 +145,20 @@
     </div>
   </section>
 
-  <!-- Контакты -->
+  <!-- Контакты и социальные сети -->
   <section id="contacts" class="contacts-box">
     <span class="eyebrow">СВЯЗЬ И ЗАКАЗ</span>
     <h2 class="section-title" style="margin-bottom: 10px;">Екатерина Валериевна</h2>
-    <p style="color: #b3a99b; font-size: 0.95rem;">По вопросам приобретения готовых работ или индивидуального заказа свяжитесь со мной.</p>
+    <p style="color: #b3a99b; font-size: 0.95rem;">По вопросам приобретения готовых работ или индивидуального заказа свяжитесь со мной удобным способом:</p>
+    
+    <div class="social-grid">
+      <!-- Замените знаки # на ваши реальные ссылки или номера -->
+      <a class="social-btn" href="https://wa.me/79000000000" target="_blank">WhatsApp</a>
+      <a class="social-btn" href="https://t.me/username" target="_blank">Telegram</a>
+      <a class="social-btn" href="https://vk.com/id0" target="_blank">ВКонтакте</a>
+      <a class="social-btn" href="https://ok.ru/" target="_blank">Одноклассники</a>
+      <a class="social-btn" href="https://instagram.com/" target="_blank">Instagram</a>
+    </div>
   </section>
 
   <footer class="site-footer">
