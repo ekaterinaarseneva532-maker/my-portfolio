@@ -1,0 +1,12 @@
+title: "Мои авторские работы"
+description: "Авторские декоративные работы и произведения ручной работы."
+url: "https://ekaterinaarseneva532-maker.github.io"
+lang: "ru"
+markdown: kramdown
+permalink: /works/:title/
+collections:
+  works:
+    output: true
+    permalink: /works/:title/
+plugins:
+  - jekyll-sitemap
