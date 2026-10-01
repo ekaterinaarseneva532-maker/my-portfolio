@@ -1,46 +1,92 @@
 ---
-layout: default
-title: Иконы и киоты ручной работы
+layout: null
 ---
-<section class="hero">
-  <div>
-    <p class="eyebrow">АВТОРСКИЕ РАБОТЫ · ЕДИНИЧНЫЕ ЭКЗЕМПЛЯРЫ</p>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ИКОНЫ — Авторские работы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #0b0a08; color: #e8e3d9; font-family: 'Montserrat', sans-serif; line-height: 1.6; padding: 15px; }
+    
+    .site-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.25); max-width: 1000px; margin: 0 auto 20px auto; }
+    .site-title { color: #f3ece0; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; font-weight: 700; }
+    .header-btn { border: 1px solid #c59b27; color: #e6c875; padding: 6px 14px; text-decoration: none; border-radius: 2px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+
+    .hero { max-width: 1000px; margin: 0 auto 40px auto; padding: 35px 20px; background: linear-gradient(rgba(11, 10, 8, 0.85), rgba(11, 10, 8, 0.95)), url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; border: 1px solid rgba(212, 175, 55, 0.3); }
+    .eyebrow { color: #a89f91; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.15; color: #f3ece0; margin-bottom: 18px; font-weight: 600; }
+    .hero p.lead { color: #b3a99b; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.5; }
+    
+    .buttons { display: flex; flex-direction: column; gap: 12px; }
+    .btn-gold { background: linear-gradient(135deg, #e6c875, #c59b27); color: #0b0a08; padding: 12px 20px; font-weight: 600; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+    .btn-outline { border: 1px solid #c59b27; color: #e6c875; padding: 12px 20px; text-decoration: none; text-align: center; border-radius: 2px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #e6c875; margin-bottom: 20px; text-align: center; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto 40px auto; }
+    .card { background: #14110d; border: 1px solid rgba(212, 175, 55, 0.2); padding: 12px; }
+    .card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: #f3ece0; margin-top: 10px; }
+
+    .contacts-box { max-width: 1000px; margin: 0 auto 40px auto; text-align: center; padding: 30px 15px; background: #14110d; border: 1px solid rgba(212, 175, 55, 0.2); }
+    .contacts-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+
+    .site-footer { text-align: center; padding: 30px 0; border-top: 1px solid rgba(212, 175, 55, 0.2); color: #7a7165; font-size: 0.8rem; max-width: 1000px; margin: 0 auto; }
+    .site-footer a { color: #c59b27; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="site-title" href="{{ site.baseurl }}/">ИКОНЫ</a>
+    <a class="header-btn" href="#contacts">Связаться</a>
+  </header>
+
+  <section class="hero">
+    <span class="eyebrow">АВТОРСКИЕ РАБОТЫ · ЕДИНИЧНЫЕ ЭКЗЕМПЛЯРЫ</span>
     <h1>Иконы и киоты, созданные вручную</h1>
     <p class="lead">Коллекция декоративно оформленных икон для дома, в подарок и для особого события. Каждая работа — отдельный художественный объект.</p>
     <div class="buttons">
       <a class="btn-gold" href="#works">Смотреть каталог</a>
       <a class="btn-outline" href="#contacts">Индивидуальный заказ</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="works">
-  <h2 class="section-title">Авторские работы</h2>
-  <div class="grid">
-    {% assign works = site.works | sort: "date" | reverse %}
-    {% for work in works limit:12 %}
-      <article class="card">
-        <a href="{{ work.url | relative_url }}" style="text-decoration: none;">
-          {% if work.image %}
-            <img src="{{ work.image | relative_url }}" alt="{{ work.title }}">
-          {% else %}
-            <div style="height: 250px; background: #1e1a14; display: flex; align-items: center; justify-content: center; color: #666;">Фото появится после загрузки</div>
-          {% endif %}
-          <h3>{{ work.title }}</h3>
-          {% if work.category %}<p style="color: #a89f91; font-size: 0.85rem;">{{ work.category }}</p>{% endif %}
-        </a>
-      </article>
-    {% endfor %}
-  </div>
-</section>
+  <section id="works">
+    <h2 class="section-title">Авторские работы</h2>
+    <div class="grid">
+      {% assign works = site.works | sort: "date" | reverse %}
+      {% for work in works %}
+        <article class="card">
+          <a href="{{ work.url | relative_url }}" style="text-decoration: none;">
+            {% if work.image %}<img src="{{ work.image | relative_url }}" alt="{{ work.title }}" style="width:100%; height:200px; object-fit:cover;">{% endif %}
+            <h3>{{ work.title }}</h3>
+            {% if work.category %}<p style="color: #a89f91; font-size: 0.8rem;">{{ work.category }}</p>{% endif %}
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
 
-<section id="contacts" style="max-width: 800px; margin: 0 auto 60px auto; text-align: center; padding: 40px 20px; background: #14110d; border: 1px solid rgba(212, 175, 55, 0.2);">
-  <p class="eyebrow">СВЯЗЬ И ЗАКАЗ</p>
-  <h2 class="section-title">Екатерина Арсеньева</h2>
-  <p style="margin-bottom: 25px; color: #b3a99b;">По вопросам приобретения или заказа индивидуальной работы вы можете связаться напрямую со мной.</p>
-  <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-    {% if site.data.settings.phone %}<a class="btn-outline" href="tel:{{ site.data.settings.phone }}">Телефон</a>{% endif %}
-    {% if site.data.settings.telegram %}<a class="btn-outline" href="{{ site.data.settings.telegram }}">Telegram</a>{% endif %}
-    {% if site.data.settings.vk %}<a class="btn-outline" href="{{ site.data.settings.vk }}">VK</a>{% endif %}
-  </div>
-</section>
+  <section id="contacts" class="contacts-box">
+    <span class="eyebrow">СВЯЗЬ И ЗАКАЗ</span>
+    <h2 class="section-title" style="margin-bottom: 10px;">Екатерина Арсеньева</h2>
+    <p style="color: #b3a99b; font-size: 0.9rem;">По вопросам приобретения или заказа индивидуальной работы свяжитесь со мной:</p>
+    <div class="contacts-links">
+      {% if site.data.settings.phone %}<a class="header-btn" href="tel:{{ site.data.settings.phone }}">Телефон</a>{% endif %}
+      {% if site.data.settings.telegram %}<a class="header-btn" href="{{ site.data.settings.telegram }}">Telegram</a>{% endif %}
+      {% if site.data.settings.vk %}<a class="header-btn" href="{{ site.data.settings.vk }}">VK</a>{% endif %}
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© ИКОНЫ | <a href="{{ site.baseurl }}/admin/">Панель управления</a></p>
+  </footer>
+
+</body>
+</html>
