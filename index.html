@@ -1,31 +1,46 @@
 ---
 layout: default
-title: Главная
+title: Иконы и киоты ручной работы
 ---
 <section class="hero">
-  <h1>{{ site.data.settings.name }}</h1>
-  <p>{{ site.data.settings.tagline }}</p>
-  <a class="button" href="#works">Смотреть работы</a>
+  <div>
+    <p class="eyebrow">АВТОРСКИЕ РАБОТЫ · ЕДИНИЧНЫЕ ЭКЗЕМПЛЯРЫ</p>
+    <h1>Иконы и киоты, созданные вручную</h1>
+    <p class="lead">Коллекция декоративно оформленных икон для дома, в подарок и для особого события. Каждая работа — отдельный художественный объект.</p>
+    <div class="buttons">
+      <a class="btn-gold" href="#works">Смотреть каталог</a>
+      <a class="btn-outline" href="#contacts">Индивидуальный заказ</a>
+    </div>
+  </div>
 </section>
 
 <section id="works">
-  <h2>Мои работы</h2>
+  <h2 class="section-title">Авторские работы</h2>
   <div class="grid">
     {% assign works = site.works | sort: "date" | reverse %}
-    {% for work in works %}
+    {% for work in works limit:12 %}
       <article class="card">
-        <a href="{{ work.url | relative_url }}">
-          {% if work.image %}<img src="{{ work.image | relative_url }}" alt="{{ work.title }}">{% endif %}
+        <a href="{{ work.url | relative_url }}" style="text-decoration: none;">
+          {% if work.image %}
+            <img src="{{ work.image | relative_url }}" alt="{{ work.title }}">
+          {% else %}
+            <div style="height: 250px; background: #1e1a14; display: flex; align-items: center; justify-content: center; color: #666;">Фото появится после загрузки</div>
+          {% endif %}
           <h3>{{ work.title }}</h3>
-          <p>{{ work.category }}</p>
+          {% if work.category %}<p style="color: #a89f91; font-size: 0.85rem;">{{ work.category }}</p>{% endif %}
         </a>
       </article>
     {% endfor %}
   </div>
 </section>
 
-<section id="contacts">
-  <h2>Контакты</h2>
-  <p>{{ site.data.settings.about }}</p>
-  <p>Email: {{ site.data.settings.email }} | Телефон: {{ site.data.settings.phone }}</p>
+<section id="contacts" style="max-width: 800px; margin: 0 auto 60px auto; text-align: center; padding: 40px 20px; background: #14110d; border: 1px solid rgba(212, 175, 55, 0.2);">
+  <p class="eyebrow">СВЯЗЬ И ЗАКАЗ</p>
+  <h2 class="section-title">Екатерина Арсеньева</h2>
+  <p style="margin-bottom: 25px; color: #b3a99b;">По вопросам приобретения или заказа индивидуальной работы вы можете связаться напрямую со мной.</p>
+  <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+    {% if site.data.settings.phone %}<a class="btn-outline" href="tel:{{ site.data.settings.phone }}">Телефон</a>{% endif %}
+    {% if site.data.settings.telegram %}<a class="btn-outline" href="{{ site.data.settings.telegram }}">Telegram</a>{% endif %}
+    {% if site.data.settings.vk %}<a class="btn-outline" href="{{ site.data.settings.vk }}">VK</a>{% endif %}
+  </div>
 </section>
