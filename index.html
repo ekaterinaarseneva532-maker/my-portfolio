@@ -1,0 +1,31 @@
+---
+layout: default
+title: Главная
+---
+<section class="hero">
+  <h1>{{ site.data.settings.name }}</h1>
+  <p>{{ site.data.settings.tagline }}</p>
+  <a class="button" href="#works">Смотреть работы</a>
+</section>
+
+<section id="works">
+  <h2>Мои работы</h2>
+  <div class="grid">
+    {% assign works = site.works | sort: "date" | reverse %}
+    {% for work in works %}
+      <article class="card">
+        <a href="{{ work.url | relative_url }}">
+          {% if work.image %}<img src="{{ work.image | relative_url }}" alt="{{ work.title }}">{% endif %}
+          <h3>{{ work.title }}</h3>
+          <p>{{ work.category }}</p>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="contacts">
+  <h2>Контакты</h2>
+  <p>{{ site.data.settings.about }}</p>
+  <p>Email: {{ site.data.settings.email }} | Телефон: {{ site.data.settings.phone }}</p>
+</section>
