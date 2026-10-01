@@ -1,6 +1,7 @@
-title: "Мои авторские работы"
-description: "Авторские декоративные работы и произведения ручной работы."
+title: "ИКОНЫ"
+description: "Авторские работы · единичные экземпляры. Иконы и киоты, созданные вручную."
 url: "https://ekaterinaarseneva532-maker.github.io"
+baseurl: ""
 lang: "ru"
 markdown: kramdown
 permalink: /works/:title/
